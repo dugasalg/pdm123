@@ -16,8 +16,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pdm123f.firstpartial.EvenOddView
-import com.example.pdm123f.firstpartial.PadelScoreView
+import com.example.pdm123f.firstpartial.*
 import com.example.pdm123f.navigation.NavBarItems
 import com.example.pdm123f.navigation.NavRoutes
 import com.example.pdm123f.ui.theme.PDM123fTheme
@@ -72,7 +71,11 @@ fun NavigationHost(navController: NavHostController) {
             PadelScoreView(navController = navController)
         }
         composable(NavRoutes.EvenOdd.route){
-            EvenOddView(navController = navController)
+            EvenOddView(navController = navController, viewModel = EvenOrOddViewModel())
+        }
+        composable(NavRoutes.Cards.route){
+               CardsView(navController = navController, viewModel = CardsViewModel())
+
         }
     }
 }

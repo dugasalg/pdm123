@@ -6,6 +6,15 @@
     <string name="second_partial">Segundo Parcial</string>
     <string name="third_partial">Tercer Parcial</string>
     <string name="padel_score">Puntuación de Padel</string>
+    <string name="even_odd">Par o Non</string>
+    <string name="calculate">Calcular</string>
+    <string name="hide">Esconder</string>
+    <string name="get_card">obtener carta</string>
+    <string name="cards">cartas</string>
+    <string name="number_comparator">comparador de numeros</string>
+    <string name="compare">comparar</string>
+
+
 
 
 </resources>
