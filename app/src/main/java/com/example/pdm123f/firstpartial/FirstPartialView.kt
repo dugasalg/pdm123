@@ -19,6 +19,7 @@ fun FirstPartialView(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
 
+
         ) {
         Text(
             text = stringResource(id = R.string.first_partial),
@@ -28,9 +29,16 @@ fun FirstPartialView(navController: NavController) {
             Text(text = stringResource(id = R.string.padel_score))
             Button(onClick = { navController.navigate(route = "evenorodd") }) {
                 Text(text = stringResource(id = R.string.even_odd))
+                Button(onClick = { navController.navigate(route = "cards") }) {
+                    Text(text = stringResource(id = R.string.cards))
+                    Button(onClick = { navController.navigate(route = "numbercomparator") }) {
+                        Text(text = stringResource(id = R.string.number_comparator))
+
+                    }
+                }
             }
+
+
         }
-
-
     }
 }

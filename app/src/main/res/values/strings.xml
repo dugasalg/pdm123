@@ -5,5 +5,14 @@
     <string name="third_partial">Third Partial</string>
     <string name="padel_score">Padel Score</string>
     <string name="even_odd">Even Odd</string>
+    <string name="calculate">Calculate</string>
+    <string name="hide">hide</string>
+    <string name="get_card">get card</string>
+    <string name="cards">cards</string>
+    <string name="number_comparator">number comparator</string>
+    <string name="compare">compare</string>
+
+
+
 
 </resources>
