@@ -1,5 +1,6 @@
 package com.example.pdm123f
 
+import ApplesViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -56,30 +57,40 @@ fun MainScreen() {
 @Composable
 fun NavigationHost(navController: NavHostController) {
 
-    NavHost(navController = navController, startDestination = NavRoutes.FirstPartial.route){
-        composable(NavRoutes.FirstPartial.route){
+    NavHost(navController = navController, startDestination = NavRoutes.FirstPartial.route) {
+        composable(NavRoutes.FirstPartial.route) {
             FirstPartialView(navController = navController)
 
         }
-        composable(NavRoutes.SecondPartial.route){
+        composable(NavRoutes.SecondPartial.route) {
             SecondPartialView()
         }
-        composable(NavRoutes.ThirdPartial.route){
+        composable(NavRoutes.ThirdPartial.route) {
             ThirdPartialView()
         }
-        composable(NavRoutes.PadelScore.route){
+        composable(NavRoutes.PadelScore.route) {
             PadelScoreView(navController = navController)
         }
-        composable(NavRoutes.EvenOdd.route){
+        composable(NavRoutes.EvenOdd.route) {
             EvenOddView(navController = navController, viewModel = EvenOrOddViewModel())
         }
-        composable(NavRoutes.Cards.route){
-               CardsView(navController = navController, viewModel = CardsViewModel())
-
+        composable(NavRoutes.Cards.route) {
+            CardsView(navController = navController, viewModel = CardsViewModel())
+        }
+        composable(NavRoutes.Compare.route) {
+            NumberComparatorView(
+                navController = navController,
+                viewModel = NumberComparatorViewModel()
+            )
+        }
+        composable(NavRoutes.Barber.route) {
+            BarberView(navController = navController, viewModel = BarberViewModel())
+        }
+        composable(NavRoutes.Apple.route) {
+            ApplesView(viewModel = ApplesViewModel())
         }
     }
 }
-
 @Composable
 fun BottomBar(navController: NavHostController) {
     BottomNavigation {

@@ -27,12 +27,13 @@ fun EvenOddView(navController: NavController, viewModel: EvenOrOddViewModel) {
     var txtNumber by remember { mutableStateOf("") }
     val evenOrOddStatus by viewModel.evenOrOddStatus.observeAsState("")
 
-
+    // Diseño de la pantalla en una columna
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        // Muestra la animación "even" o "odd" según el estado
         if (viewModel.getBooleanState().value == true) {
             ComposeLottieEven(modifier = Modifier.width(300.dp).height(300.dp))
         } else {
@@ -44,6 +45,7 @@ fun EvenOddView(navController: NavController, viewModel: EvenOrOddViewModel) {
             onValueChange = {
                 txtNumber = it
                 if (txtNumber != "") {
+                    // Calcula si es par o impar cuando se ingresa un número
                     viewModel.calculateEvenOrOdd(txtNumber.toInt())
                 }
             },

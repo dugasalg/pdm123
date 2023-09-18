@@ -20,7 +20,7 @@ import com.example.pdm123f.R
 
 
 @Composable
-fun NumberComparatorView(viewModel: NumberComparatorViewModel) {
+fun NumberComparatorView(viewModel: NumberComparatorViewModel, navController: NavController) {
     var number1 by remember { mutableStateOf("0") }
     var number2 by remember { mutableStateOf("0") }
     var number3 by remember { mutableStateOf("0") }
@@ -60,9 +60,9 @@ fun NumberComparatorView(viewModel: NumberComparatorViewModel) {
                 viewModel.compareNumbers(NumberComparator(num1, num2, num3))
             }
         ) {
-            Text(R.string.compare.toString())
+            Text(text = stringResource(id = R.string.compare))
         }
 
-        Text(text = compareState)
+        Text(text = stringResource(id = R.string.min)+"${compareState}")
     }
 }
