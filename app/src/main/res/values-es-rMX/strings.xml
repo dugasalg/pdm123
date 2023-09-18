@@ -13,6 +13,12 @@
     <string name="cards">cartas</string>
     <string name="number_comparator">comparador de numeros</string>
     <string name="compare">comparar</string>
+    <string name="min">Minimo: </string>
+    <string name="Please_type_three_different_numbers">Porfavor escribe tres numeros diferentes </string>
+    <string name="barber">barberia </string>
+    <string name="apple">manzana </string>
+
+
 
 
 

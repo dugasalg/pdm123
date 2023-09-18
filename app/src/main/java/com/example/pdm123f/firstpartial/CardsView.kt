@@ -18,7 +18,10 @@ import com.example.pdm123f.R
 
 @Composable
 fun CardsView(navController: NavController, viewModel: CardsViewModel) {
+    // Observa la imagen actual obtenida del ViewModel
     val card by viewModel.getRandomImage().observeAsState(R.drawable.back)
+
+    // Diseño de la pantalla en una columna
     Column {
         Image(painter = painterResource(id = card), contentDescription = "",
             modifier = androidx.compose.ui.Modifier
@@ -27,6 +30,7 @@ fun CardsView(navController: NavController, viewModel: CardsViewModel) {
 
 
         )
+        // Botones en una fila
         Row {
             Button(onClick = { viewModel.showBackCard()}) {
                 Text(text = stringResource(id = R.string.hide))

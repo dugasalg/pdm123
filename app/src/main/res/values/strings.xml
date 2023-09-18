@@ -11,7 +11,10 @@
     <string name="cards">cards</string>
     <string name="number_comparator">number comparator</string>
     <string name="compare">compare</string>
-
+    <string name="min">Min: </string>
+    <string name="Please_type_three_different_numbers">Please type three different numbers</string>
+    <string name="barber">barber </string>
+    <string name="apple">apple </string>
 
 
 
