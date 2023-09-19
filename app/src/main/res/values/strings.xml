@@ -15,7 +15,10 @@
     <string name="Please_type_three_different_numbers">Please type three different numbers</string>
     <string name="barber">barber </string>
     <string name="apple">apple </string>
-
+    <string name="total_production">total production </string>
+    <string name="actual_production">actual production </string>
+    <string name="apples">apples </string>
+    <string name="percentage">percentage </string>
 
 
 </resources>
