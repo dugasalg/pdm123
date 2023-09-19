@@ -17,6 +17,12 @@
     <string name="Please_type_three_different_numbers">Porfavor escribe tres numeros diferentes </string>
     <string name="barber">barberia </string>
     <string name="apple">manzana </string>
+    <string name="total_production">producción total</string>
+    <string name="apples">manzanas </string>
+    <string name="actual_production">produccion actual </string>
+    <string name="percentage">porcentaje </string>
+
+
 
 
 

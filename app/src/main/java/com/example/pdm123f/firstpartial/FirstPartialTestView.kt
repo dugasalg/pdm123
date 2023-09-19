@@ -26,6 +26,7 @@ import androidx.compose.foundation.background
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 
 
 @Composable
@@ -47,7 +48,7 @@ fun ApplesView(viewModel: ApplesViewModel) {
             .fillMaxSize()
             // Modifica el color del fondo de la columna si el porcentaje es mayor a 70
 
-            .background(if (percentageRes.toFloat() > 70.0f) Color.Red else Color.White), // Cambia el color de fondo aquí
+            .background(if (percentageRes.toFloat() > 70.0f) Color.Red else Color.White),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -57,7 +58,7 @@ fun ApplesView(viewModel: ApplesViewModel) {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.apples),
-                contentDescription = "Manzanas"
+                contentDescription = R.string.apples.toString(),
             )
 
             Spacer(
@@ -73,10 +74,12 @@ fun ApplesView(viewModel: ApplesViewModel) {
                 .wrapContentSize(Alignment.Center),
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "Produccion Total",
-                modifier = Modifier.padding(15.dp)
-            )
+
+                Text(text = stringResource(id = R.string.total_production))
+                Spacer(
+                    modifier = Modifier.width(15.dp)
+                )
+
 
             TextField(
                 value = viewModel.currentTotalProduction.value.toString(),
@@ -88,13 +91,9 @@ fun ApplesView(viewModel: ApplesViewModel) {
             )
 
 
-            Spacer(
-                modifier = Modifier.width(15.dp)
-            )
-
             Image(
                 painter = painterResource(id = R.drawable.apples),
-                contentDescription = "Manzana",
+                contentDescription = R.string.apples.toString(),
                 modifier = Modifier
                     .height(50.dp)
                     .width(50.dp)
@@ -111,9 +110,9 @@ fun ApplesView(viewModel: ApplesViewModel) {
                 .wrapContentSize(Alignment.Center),
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "Produccion Actual",
-                modifier = Modifier.padding(15.dp)
+            Text(text = stringResource(id = R.string.actual_production))
+            Spacer(
+                modifier = Modifier.width(15.dp)
             )
             TextField(
                 value = viewModel.currentActualProduction.value.toString(),
@@ -123,12 +122,10 @@ fun ApplesView(viewModel: ApplesViewModel) {
                 modifier = Modifier.width(100.dp).height(49.dp),
                 enabled = false
             )
-            Spacer(
-                modifier = Modifier.width(50.dp)
-            )
+
             Image(
                 painter = painterResource(id = R.drawable.apples),
-                contentDescription = "Manzana",
+                contentDescription = R.string.apples.toString(),
                 modifier = Modifier
                     .height(50.dp)
                     .width(50.dp)
@@ -169,9 +166,9 @@ fun ApplesView(viewModel: ApplesViewModel) {
                 .wrapContentSize(Alignment.Center),
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "Porcentaje",
-                modifier = Modifier.padding(15.dp)
+            Text(text = stringResource(id = R.string.percentage))
+            Spacer(
+                modifier = Modifier.width(15.dp)
             )
 
 // Modifica el color del texto y del fondo según el porcentaje
@@ -182,22 +179,20 @@ fun ApplesView(viewModel: ApplesViewModel) {
             Text(
                 text = percentageRes.toString(),
                 modifier = Modifier
-                    .padding(15.dp)
+                    .padding(1.dp)
                     .background(color = backgroundColor)
-                    .padding(8.dp)
+                    .padding(1.dp)
                     .background(color = textColor)
             )
 
-            Spacer(modifier = Modifier.height(50.dp))
-
             Row(
                 modifier = Modifier
-                    .fillMaxWidth()
                     .wrapContentSize(Alignment.Center),
                 horizontalArrangement = Arrangement.Center
             ) {
                 Button(onClick = { viewModel.calculatePercentage(totalProdRes, actualProdRes) }) {
-                    Text(text = "Calcular")
+                    Text(text = stringResource(id = R.string.calculate))
+
                 }
             }
         }

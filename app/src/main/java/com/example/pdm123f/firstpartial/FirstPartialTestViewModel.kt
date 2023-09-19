@@ -71,7 +71,7 @@ class ApplesViewModel : ViewModel() {
         if (uiState.value == UIState.Idle) {
             uiState.value = UIState.CalculatingTotalProdToast
             val total = currentTotalProduction.value
-            val result = total * 80
+            val result = total * 70
             val toastMessage = "$result manzanas"
             Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
             uiState.value = UIState.Idle
