@@ -142,20 +142,20 @@ fun ApplesView(viewModel: ApplesViewModel) {
             horizontalArrangement = Arrangement.Center
         ) {
             Button(
-                onClick = { viewModel.add5() },
+                onClick = { viewModel.increment(5) },
             ) {
                 Text(text = "+5")
             }
             Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = { viewModel.add15() }) {
+            Button(onClick = { viewModel.increment(15) }) {
                 Text(text = "+15")
             }
             Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = { viewModel.add30() }) {
+            Button(onClick = { viewModel.increment(30) }) {
                 Text(text = "+30")
             }
             Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = { viewModel.add50() }) {
+            Button(onClick = { viewModel.increment(50) }) {
                 Text(text = "+50")
             }
         }
