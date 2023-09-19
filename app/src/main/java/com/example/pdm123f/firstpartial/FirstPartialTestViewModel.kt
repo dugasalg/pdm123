@@ -68,9 +68,6 @@ class ApplesViewModel : ViewModel() {
 sealed class UIState {
     object Idle : UIState()
     object Adding5 : UIState()
-    object Adding15 : UIState()
-    object Adding30 : UIState()
-    object Adding50 : UIState()
     object CalculatingPercentage : UIState()
     object CalculatingTotalProdToast : UIState()
     object CalculatingActualProdToast : UIState()
