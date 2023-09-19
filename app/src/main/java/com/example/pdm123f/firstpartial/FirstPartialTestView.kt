@@ -52,7 +52,7 @@ fun ApplesView(viewModel: ApplesViewModel) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(5.dp))
         Row(
             horizontalArrangement = Arrangement.Center
         ) {
@@ -92,7 +92,7 @@ fun ApplesView(viewModel: ApplesViewModel) {
 
 
             Image(
-                painter = painterResource(id = R.drawable.apples),
+                painter = painterResource(id = R.drawable.buttapple),
                 contentDescription = R.string.apples.toString(),
                 modifier = Modifier
                     .height(50.dp)
@@ -124,7 +124,7 @@ fun ApplesView(viewModel: ApplesViewModel) {
             )
 
             Image(
-                painter = painterResource(id = R.drawable.apples),
+                painter = painterResource(id = R.drawable.buttapple),
                 contentDescription = R.string.apples.toString(),
                 modifier = Modifier
                     .height(50.dp)
@@ -174,7 +174,8 @@ fun ApplesView(viewModel: ApplesViewModel) {
 // Modifica el color del texto y del fondo según el porcentaje
             val percentage = percentageRes.toFloat()
             val textColor = if (percentage > 80.0f) Color.Red else Color.Unspecified
-            val backgroundColor = if (percentage > 80.0f) Color.Red.copy(alpha = 0.1f) else Color.Transparent
+            val backgroundColor =
+                if (percentage > 80.0f) Color.Red.copy(alpha = 0.1f) else Color.Transparent
 
             Text(
                 text = percentageRes.toString(),
@@ -184,19 +185,21 @@ fun ApplesView(viewModel: ApplesViewModel) {
                     .padding(1.dp)
                     .background(color = textColor)
             )
-
+        }
             Row(
                 modifier = Modifier
                     .wrapContentSize(Alignment.Center),
                 horizontalArrangement = Arrangement.Center
             ) {
                 Button(onClick = { viewModel.calculatePercentage(totalProdRes, actualProdRes) }) {
+
+
                     Text(text = stringResource(id = R.string.calculate))
+
 
                 }
             }
         }
     }
-}
 
 
