@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -20,11 +21,18 @@ import androidx.navigation.compose.rememberNavController
 import com.example.pdm123f.firstpartial.*
 import com.example.pdm123f.navigation.NavBarItems
 import com.example.pdm123f.navigation.NavRoutes
+import com.example.pdm123f.secondpartial.Listas.ListasView
+import com.example.pdm123f.secondpartial.Qr.QrView
+import com.example.pdm123f.secondpartial.onboarding.OnboardingView
 import com.example.pdm123f.ui.theme.PDM123fTheme
+import com.google.accompanist.pager.ExperimentalPagerApi
 
 // Comentario de prueba
 // Comentario de prueba
+@androidx.camera.core.ExperimentalGetImage
+
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalPagerApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -34,7 +42,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    MainScreen()
+                MainScreen()
                 }
             }
         }
@@ -42,6 +50,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+@androidx.camera.core.ExperimentalGetImage
 fun MainScreen() {
     val navController = rememberNavController()
 
@@ -55,6 +64,7 @@ fun MainScreen() {
 
         }
 @Composable
+@androidx.camera.core.ExperimentalGetImage
 fun NavigationHost(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = NavRoutes.FirstPartial.route) {
@@ -63,7 +73,7 @@ fun NavigationHost(navController: NavHostController) {
 
         }
         composable(NavRoutes.SecondPartial.route) {
-            SecondPartialView()
+            SecondPartialView(navController = navController)
         }
         composable(NavRoutes.ThirdPartial.route) {
             ThirdPartialView()
@@ -88,6 +98,12 @@ fun NavigationHost(navController: NavHostController) {
         }
         composable(NavRoutes.Apple.route) {
             ApplesView(viewModel = ApplesViewModel())
+        }
+        composable(NavRoutes.Listas.route) {
+            ListasView(navController = navController)
+        }
+        composable(NavRoutes.Qr.route) {
+            QrView()
         }
     }
 }
@@ -114,6 +130,8 @@ fun BottomBar(navController: NavHostController) {
         }
     }
 }
+
+@androidx.camera.core.ExperimentalGetImage
 
 @Preview(showBackground = true)
 @Composable
