@@ -15,41 +15,16 @@ class ApplesViewModel : ViewModel() {
 
     val uiState = mutableStateOf<UIState>(UIState.Idle)
 
-    fun add5() {
+
+    fun increment(valueToIncrement: Int){
         if (uiState.value == UIState.Idle) {
             uiState.value = UIState.Adding5
-            currentActualProduction.value += 5
+            currentActualProduction.value += valueToIncrement
             calculatePercentage(currentTotalProduction.value, currentActualProduction.value)
             uiState.value = UIState.Idle
         }
     }
 
-    fun add15() {
-        if (uiState.value == UIState.Idle) {
-            uiState.value = UIState.Adding15
-            currentActualProduction.value += 15
-            calculatePercentage(currentTotalProduction.value, currentActualProduction.value)
-            uiState.value = UIState.Idle
-        }
-    }
-
-    fun add30() {
-        if (uiState.value == UIState.Idle) {
-            uiState.value = UIState.Adding30
-            currentActualProduction.value += 30
-            calculatePercentage(currentTotalProduction.value, currentActualProduction.value)
-            uiState.value = UIState.Idle
-        }
-    }
-
-    fun add50() {
-        if (uiState.value == UIState.Idle) {
-            uiState.value = UIState.Adding50
-            currentActualProduction.value += 50
-            calculatePercentage(currentTotalProduction.value, currentActualProduction.value)
-            uiState.value = UIState.Idle
-        }
-    }
 
     fun calculatePercentage(total: Int, actual: Int) {
         if (uiState.value == UIState.Idle) {
@@ -93,9 +68,6 @@ class ApplesViewModel : ViewModel() {
 sealed class UIState {
     object Idle : UIState()
     object Adding5 : UIState()
-    object Adding15 : UIState()
-    object Adding30 : UIState()
-    object Adding50 : UIState()
     object CalculatingPercentage : UIState()
     object CalculatingTotalProdToast : UIState()
     object CalculatingActualProdToast : UIState()
